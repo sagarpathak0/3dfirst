@@ -1,118 +1,94 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import Scene from '@/components/Scene';
+import React, { useEffect, useState } from 'react';
+import 'tailwindcss/tailwind.css';
 
-const inter = Inter({ subsets: ["latin"] });
+function Index() {
+  const data = {
+    message: 'Hello World Yo',
+    devs: ['one', 'Two', 'Three', 'Four'],
+    message1:
+      'this is the second card of the code that is given here and this card looks good',
+  };
 
-export default function Home() {
+  const [message, setMessage] = useState('Loading.....');
+  const [message1, setMessage1] = useState();
+  const [devs, setDevs] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/api/home").then(
+  //     response => response.json()
+  //   ).then(
+  //     data => {
+  //       setMessage(data.message);
+  //       setMessage1(data.message1);
+  //       setDevs(data.devs);
+  //     }
+  //   );
+  // }, []);
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <div className="flex flex-col bg-gradient-to-l from-orange-700 to-black min-h-screen py-6 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row mt-12 mx-auto max-w-7xl">
+          <div className="flex-1 text-white items-center mb-12 md:mb-0">
+            <div>{data.message1}</div>
+            <div className="max-w-full md:max-w-sm h-fit rounded-xl overflow-hidden shadow-lg mt-6 md:mt-20 mb-6 md:mb-10 bg-white hover:translate-x-5 hover:translate-y-5 hover:tracking-tight hover:duration-1000">
+              <img
+                className="w-full h-48 md:h-72 object-cover opacity-70 hover:opacity-100 mb-5 px-2 pt-2"
+                src="https://cdn.pixabay.com/photo/2023/10/15/11/38/street-8316703_1280.jpg"
+                alt="Sunset in the mountains"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2 text-black">{data.message}</div>
+                <p className="text-gray-700 text-base mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                  exercitationem praesentium nihil.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-around">
+                {data.devs.map((dev, index) => (
+                  <div key={index} className="mb-2">
+                    <span className="inline-block text-white bg-blue-500 hover:bg-blue-700 rounded-full px-4 py-2 text-sm font-bold">
+                      #{dev}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 text-white md:ml-12">
+            <div>{data.message1}</div>
+            <div className="max-w-full md:max-w-sm h-fit rounded-xl overflow-hidden shadow-lg mt-6 md:mt-20 mb-6 md:mb-10 bg-white hover:translate-x-5 hover:translate-y-5 hover:tracking-tight hover:duration-1000">
+              <img
+                className="w-full h-48 md:h-72 object-cover opacity-70 hover:opacity-100 mb-5 px-2 pt-2"
+                src="https://cdn.pixabay.com/photo/2023/10/15/11/38/street-8316703_1280.jpg"
+                alt="Sunset in the mountains"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2 text-black">{data.message}</div>
+                <p className="text-gray-700 text-base mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                  exercitationem praesentium nihil.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-around">
+                {data.devs.map((dev, index) => (
+                  <div key={index} className="mb-2">
+                    <span className="inline-block text-white bg-blue-500 hover:bg-blue-700 rounded-full px-4 py-2 text-sm font-bold">
+                      #{dev}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+        {/* <div className='h-screen w-screen'><Scene/></div> */}
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
+
+export default Index;
