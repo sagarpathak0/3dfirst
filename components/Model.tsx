@@ -12,14 +12,15 @@ export default function Model() {
   const scroll = useScroll();
 
   useEffect(() => {
-    console.log(actions)
-    actions["Experiment"].play().paused = false;
-  },[actions]);
+    if (actions["Experiment"]) {
+      actions["Experiment"].play().paused = false;
+    }
+  }, [actions]);
 
   useFrame(({ clock }) => {
-    
+    if (actions["Experiment"]) {
       actions["Experiment"].time = (actions["Experiment"].getClip().duration * scroll.offset) / 3;
-    
+    }
   });
 
   return (
