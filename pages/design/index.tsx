@@ -3,18 +3,17 @@
 import Image from "next/image";
 import React from "react";
 // import { calsans } from "@/fonts/calsans";
-import { Meteors } from "../ui/meteors";
+import { Meteors } from "../../components/ui/meteors";
 
 
 import { motion } from "framer-motion";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import { AuroraBackground } from "../ui/aurora-background";
-import { HeroHighlight, Highlight } from "../ui/hero-highlight";
-import { HoverEffect } from "../ui/card-hover-effect";
-import { TracingBeam } from "../ui/tracing-beam";
+import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card";
+import { AuroraBackground } from "../../components/ui/aurora-background";
+import { HeroHighlight, Highlight } from "../../components/ui/hero-highlight";
+import { HoverEffect } from "../../components/ui/card-hover-effect";
 
 import { twMerge } from "tailwind-merge";
-import { projects, dummyContent } from "./detail";
+import { projects, dummyContent } from "../../detail";
 
 const Design = () => {
     return (
