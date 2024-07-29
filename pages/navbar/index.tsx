@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='bg-white fixed w-full mb-10 z-10 border-double border-b-8 border-black dark:bg-gray-900'>
+    <nav className='bg-white fixed w-full mb-10 z-50 border-double border-b-8 border-black dark:bg-gray-900'>
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
             <Link href='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
                 <img src="https://cdn.pixabay.com/photo/2023/10/15/11/38/street-8316703_1280.jpg" alt="logo" className='h-8'/>
@@ -44,7 +44,7 @@ const Navbar = () => {
                         <Link href='/getstarted' className='block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:text-blue-700'>Services</Link>
                     </li>
                     <li>
-                        <Link href='/getstarted' className='block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:text-blue-700'>Contact</Link>
+                        <Link href='/design' className='block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:text-blue-700'>Design</Link>
                     </li>
                 </ul>
             </div>
