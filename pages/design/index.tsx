@@ -40,7 +40,7 @@ const Design = () => {
                     </button>
                 </motion.div>
             </AuroraBackground>
-            <div className="flex flex-col lg:flex-row justify-around w-full max-w-screen-lg mx-auto px-4">
+            <div className="flex flex-col lg:flex-row justify-around w-full pb-10 max-w-screen-lg mx-auto px-4">
                 <CardContainer className="inter-var">
                     <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[30rem] h-auto rounded-xl p-6 border">
                         <CardItem
@@ -131,7 +131,8 @@ const Design = () => {
       </div>
                 </div>
             </div>
-            <HeroHighlight className="w-full">
+            <div className="dark:bg-gray-800">
+            <HeroHighlight className="">
                 <motion.h1
                     initial={{
                         opacity: 0,
@@ -154,6 +155,7 @@ const Design = () => {
                     </Highlight>
                 </motion.h1>
             </HeroHighlight>
+            </div>
             <div className="max-w-5xl mx-auto px-8">
                 <HoverEffect items={projects} />
             </div>

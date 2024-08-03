@@ -10,6 +10,26 @@ const config = {
 	],
   prefix: "",
   theme: {
+    mytheme: {
+          
+      "primary": "#ff00ff",
+                
+      "secondary": "#ff00ff",
+                
+      "accent": "#00ffff",
+                
+      "neutral": "#ff00ff",
+                
+      "base-100": "#ff00ff",
+                
+      "info": "#0000ff",
+                
+      "success": "#00ff00",
+                
+      "warning": "#00ff00",
+                
+      "error": "#ff0000",
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -74,7 +94,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),require('daisyui')],
 } satisfies Config
 
 export default config
