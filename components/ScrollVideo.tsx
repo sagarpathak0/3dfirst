@@ -5,14 +5,14 @@ import * as THREE from 'three';
 const throttle = (func: Function, limit: number) => {
   let lastFunc: number;
   let lastRan: number;
-  return function (...args: any) {
+  return (...args: any) => {
     const context = this;
     if (!lastRan) {
       func.apply(context, args);
       lastRan = Date.now();
     } else {
       clearTimeout(lastFunc);
-      lastFunc = window.setTimeout(function () {
+      lastFunc = window.setTimeout(() => {
         if (Date.now() - lastRan >= limit) {
           func.apply(context, args);
           lastRan = Date.now();
@@ -21,6 +21,7 @@ const throttle = (func: Function, limit: number) => {
     }
   };
 };
+
 
 const ScrollVideo: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
